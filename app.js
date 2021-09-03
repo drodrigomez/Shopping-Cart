@@ -27,7 +27,7 @@ cards.addEventListener("click", e => {
 
 items.addEventListener("click", e => {
     //increment action
-    if (e.target.classList.contains("btn-info")) {
+    if (e.target.classList.contains("btn-primary")) {
         const product = shoppingCart[e.target.dataset.id];
         product.amount++;
         shoppingCart[e.target.dataset.id] = { ...product };
@@ -86,7 +86,7 @@ const drawShoppingCart = () => {
         shoppingCartTemplete.querySelector("th").textContent = product.id;
         shoppingCartTemplete.querySelectorAll("td")[0].textContent = product.title;
         shoppingCartTemplete.querySelectorAll("td")[1].textContent = product.amount;
-        shoppingCartTemplete.querySelector(".btn-info").dataset.id = product.id
+        shoppingCartTemplete.querySelector(".btn-primary").dataset.id = product.id
         shoppingCartTemplete.querySelector(".btn-danger").dataset.id = product.id;
         shoppingCartTemplete.querySelector("span").textContent = product.amount * product.price;
         const clone = shoppingCartTemplete.cloneNode(true);
